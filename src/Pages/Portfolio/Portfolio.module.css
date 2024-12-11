@@ -1,0 +1,12 @@
+.customProgressBar {
+    height: 30px; /* Adjust this value to your desired height */
+  }
+  
+  .customProgressBar .progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* Adjust this value if needed for better readability */
+  }
+  
+  

@@ -1,0 +1,148 @@
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+.call{
+  background-image: url('http://127.0.0.1:5503/IMG/1pexels-photo-1820563.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.team-2{
+  background-image:linear-gradient( rgba(29, 28, 28, 0.45), rgba(116, 111, 111, 0.45)), url('http://127.0.0.1:5503/IMG/1pexels-photo-1820563.jpeg');
+  background-size: cover;
+  background-position: top;
+  
+}
+
+.txt{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circled{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+.contact::after{
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: grey;
+  left: 0;
+  bottom: -3px;
+}
+
+.icons i{
+  border: 1px solid white;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -15px; /* Space between columns */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 15px; /* Space between columns */
+  background-clip: padding-box;
+}
+
+/* Masonry Item Styles */
+.masonry-item {
+  margin-bottom: 15px; /* Space between items */
+}
+
+.masonry-item img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.overlay{
+  position: absolute;
+  z-index: 2;
+  background-color: #ced4da8f;
+  top: 68px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
