@@ -1,96 +1,51 @@
-import { Children, useState } from 'react'
+
 import './App.css'
-import Loading from './components/Loading/Loading'
-import Home from './Pages/Home/Home'
-import About from './Pages/About/About'
-import Services from './Pages/Services/Services'
-import Portfolio from './Pages/Portfolio/Portfolio'
-import Movies from './Pages/Movies/Movies'
-import Register from './Pages/Register/Register'
-import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom'
+
+import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
-import Trending from './Pages/Trending/Trending'
-import Team from './Pages/Team/Team'
-import Contact from './Pages/Contact/Contact'
+import Home from './Pages/Home/Home'
+import Categories from './Pages/Categories/Categories'
+import Brands from './Pages/Users/Users'
+import Sale from './Pages/Sale/Sale'
+import Register from './Pages/Register/Register'
+import Notfound from './Pages/Not Found/Notfound'
+import Login from './Pages/Login/Login'
+import Users from './Pages/Users/Users'
+import { Toaster } from 'react-hot-toast'
+import ProductDetails from './Pages/CategoryDetails/CategoryDetails'
+import CategoryDetails from './Pages/CategoryDetails/CategoryDetails'
+import Products from './Pages/Products/Products'
+
 
 function App() {
 
-
-  // const data = [
-  //   {
-  //     id: 1,
-  //     name: "Alice",
-  //     age: 20,
-  //     courses: ["Math", "Physics", "Chemistry"]
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Bob",
-  //     age: 22,
-  //     courses: ["History", "Literature"]
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Charlie",
-  //     age: 19,
-  //     courses: ["Computer Science", "Art", "Design"]
-  //   }
-  // ];
-
-  let [data, setData] = useState(
-    [
-      {
-        id: 1,
-        name: "Alice",
-        age: 20,
-        courses: ["Math", "Physics", "Chemistry"]
-      },
-      {
-        id: 2,
-        name: "Bob",
-        age: 22,
-        courses: ["History", "Literature"]
-      },
-      {
-        id: 3,
-        name: "Charlie",
-        age: 19,
-        courses: ["Computer Science", "Art", "Design"]
-      }
-    ])
-
-  function deleteCard(index) {
-    const newData = [...data];
-    newData.splice(index, 1);
-    setData(newData);
-  }
-
   const routes = createBrowserRouter([
-    {path:"/",element:<Layout />,
+    {
+      path:"/",
+      element:<Layout />,
       children:[
-     {index:true, element:<Home />},
-     {path:"register",element:<Register />},
-     {path:"portfolio",element:<Portfolio />},
-     {path:"services",element:<Services />},
-     {path:"movies",element:<Movies />},
-     {path:"team",element:<Team />},
-     {path:"about",element:<About />},
-     {path:"contact",element:<Contact />}
-     //,children:[
-      // {path:"home",element:<Home />},
-      // {path:"about",element:<About />},
-      // {path:"services",element:<Services />}
-     ]},
-
- 
-    
+        {index:true ,element:<Home />},
+        {path:"categories",element:<Categories />},
+        {path:"products",element:<Products />},
+        {path:"brands",element:<Brands />},
+        {path:"users",element:<Users />},
+        {path:"register",element:<Register />},
+        {path:'categories/:id',element:<CategoryDetails />},
+        {path:'products/:id',element:<ProductDetails />},
+        {path:'*',element:<Notfound />},
+        {path:'login',element:<Login />},
+      ],
+    },
   ])
+ 
 
   return (
     <>
-     <RouterProvider router={routes}>
 
-     </RouterProvider>
+ <RouterProvider router={routes}>
+
+ </RouterProvider>
+ <Toaster />
     </>
   )
 }
