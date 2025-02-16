@@ -7,10 +7,13 @@ export default function Layout() {
   return (
    <>
    <Navbar />
-   <div className="container mt-20">
+   <div className="container mt-20 pb-14 min-h-screen">
    <Outlet />
    </div>
-   <Footer />
+   <div className='mt-14'>
+     <Footer />
+   </div>
+  
    </>
   )
 }

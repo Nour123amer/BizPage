@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import Loading from '../../components/Loading/Loading';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import axios from 'axios';
 
+
 export default function Products() {
       const [products, setProducts] = useState ([]);
       const [isLoading ,setIsLoading] = useState(true)
+      // const [selectedProducts ,setSelectedProducts] = useState([]);
+
+    
       async function getProducts() {
         try {
           let { data } = await axios('https://api.escuelajs.co/api/v1/products');

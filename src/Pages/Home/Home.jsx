@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import Loading from '../../components/Loading/Loading';
 import toast from 'react-hot-toast';
-import ProductDetails from '../CategoryDetails/CategoryDetails';
+// import ProductDetails from '../CategoryDetails/CategoryDetails';
+import StartCard from '../../components/StartCard/StartCard';
+import BestSeller from '../../components/BestSeller/BestSeller';
 // import Menu from '../../components/Menu/Menu';
 
 
@@ -93,9 +95,9 @@ export default function Home() {
     return (
 
       <>
-       
+        <StartCard />
         <details className="dropdown mt-8">
-          <summary className="btn m-1">Filter by price</summary>
+          <summary className="btn btn-accent m-1 text-blue-950">Filter by price</summary>
           <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
             <li><Link onClick={getProducts} to=''>All</Link></li>
             <li><Link onClick={getProductsLessThan100} to=''>less than 40$</Link></li>
@@ -115,6 +117,8 @@ export default function Home() {
           </div>
         ) 
         }
+
+        {/* <BestSeller /> */}
 
       </>
     )
